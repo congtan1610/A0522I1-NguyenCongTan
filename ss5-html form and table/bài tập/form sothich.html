@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>form so thich</title>
+    <style>
+        .all{
+            text-align: center;
+            background-color: azure;
+            width: 650px;
+            height: auto;
+            padding-top: 2px;
+        }
+        .bd{
+
+            background-color: aqua;
+            padding-left: 400px;
+        }
+        h1{
+            margin: 5px;
+            color: azure;
+            background-color: red;
+        }
+        p{
+            color: blue;
+        }
+        a{
+            color: orangered;
+        }
+    </style>
+</head>
+<body class="bd">
+    <form class="all">
+        <h1>SỞ THÍCH CỦA BẠN</h1>
+        <p style="margin-left: 10px"> Họ và tên  <input type="text" name="yourname" size="30"> </p>
+        <p>Email <input type="text" name="email" size="25"> </p>
+        <p style="margin-left: 80px">Sở thích
+            <a>
+                <input type="checkbox" name="hobby" style="width: 30px;margin-left: 12px;"/>Thể thao
+                <input type="checkbox" name="hobby" style="width: 30px"/>Âm nhạc
+                <input type="checkbox" name="hobby" style="width: 30px"/>Đọc sách<br/>
+            </a>
+            <a>
+                <input type="checkbox" name="hobby" style="margin-left:90px;width: 30px"/>Lướt Web
+                <input type="checkbox" name="hobby" style="width: 30px;"/>Chơi game
+                <input type="checkbox" name="hobby" style="width: 30px"/>Điện ảnh<br/>
+            </a>
+            <a>
+                <input type="checkbox" name="hobby" style="width: 30px;margin-left: -138px"/>Du lịch<br/>
+            </a>
+        </p>
+        <input type="submit" name="sb1" value="Gửi thông tin"/>
+        <input type="reset" name="sb2" value="Nhập lại"/>
+    </form>
+</body>
+</html>
