@@ -3,14 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <title>đăng kí học viên </title>
+    <style>
+        .toan{
+            background-color: darkkhaki;
+            margin-left: 450px;
+            width: 500px;
+            padding: 5px;
+        }
+    </style>
 </head>
-<body style="background-color: darkkhaki">
-<form>
-    <h1>ĐĂNG KÍ HỌC VIÊN</h1>
+<body >
+<form class="toan">
+    <h1 style="background-color: aquamarine;color: blue">ĐĂNG KÍ HỌC VIÊN</h1>
     <p>Họ và tên <input type="text" name="yourname" size="40px"/></p>
     <p>Ngày sinh <input type="text" name="date" size="25px"/></p>
     <p>Giới tính <input type="radio" name="gender"/>Nam <input type="radio" name="gender"/>Nữ </p>
-    <p>Địa chỉ <input type=""></p>
+    <p>Địa chỉ <textarea rows="4" cols="40" name="address" style="margin-left: 20px"></textarea> </p>
+    <p>Lớp
+        <select style="margin-left: 40px">
+            <option>-chọn lớp-</option>
+            <option>-A1-</option>
+            <option>-A2 -</option>
+        </select>
+    </p>
+    <p>Email<input type="text" name="email" style="margin-left: 30px"/></p>
+    <p>Điện thoại <input type="text" name="sdt"/></p>
+    <input type="submit" name="dk" value="Đăng kí " style="margin-left: 70px"/>
+    <input type="reset" name="reset" value="Nhập lại"/>
 </form>
 
 </body>
