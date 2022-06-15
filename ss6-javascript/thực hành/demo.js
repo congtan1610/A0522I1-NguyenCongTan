@@ -20,14 +20,13 @@ function hienthi(nameId) {
 }
 
 function hienthi1(nameId) {
-        document.getElementById(nameId).innerText = 'nguyen cong tan';
+    document.getElementById(nameId).innerText = 'nguyen cong tan';
 }
+
 function hienthi2(nameId) {
     document.getElementById(nameId).innerText = 'nct';
 }
-function hienthi3(nameId) {
 
-}
 
 
 
