@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ứng dụng máy tính nâng cao</title>
+    <style>
+        td{
+            width: 50px;
+            text-align: center;
+        }
+        input{
+            width: 100px;
+            background-color: gainsboro;
+        }
+        div{
+            border: 1px solid;
+            width: 726px;
+            margin-left: 350px;
+            margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <table>
+            <tr>
+                <td colspan="7" ><input type="text" id="val" style="width: 710px; background-color: white"></td>
+            </tr>
+            <tr>
+                <td><input type="button" id="rad" value="Rad" onclick="nhap('rad')"></td>
+                <td><input type="button" id="none" value="," onclick="nhap('none')"></td>
+                <td><input type="button" id="lt" value="!" onclick="nhap('lt')"></td>
+                <td><input type="button" id="n1" value="(" onclick="nhap('n1')"></td>
+                <td><input type="button" id="n2" value=")" onclick="nhap('n2')"></td>
+                <td><input type="button" id="pt" value="%" onclick="nhap('pt')"></td>
+                <td><input type="button" id="ac" value="AC" onclick="xoa()"></td>
+            </tr>
+            <tr>
+                <td><input type="button" id="lnv" value="lnv" onclick="nhap('lnv')"></td>
+                <td><input type="button" id="sin" value="Math.sin" onclick="nhap('sin')"></td>
+                <td><input type="button" id="ln" value="Math.ln" onclick="nhap('ln')"></td>
+                <td><input type="button" id="bay" value="7" style="background-color:white" onclick="nhap('bay')"></td>
+                <td><input type="button" id="tam" value="8" style="background-color:white" onclick="nhap('tam')"></td>
+                <td><input type="button" id="chin" value="9" style="background-color:white" onclick="nhap('chin')"></td>
+                <td><input type="button" id="chia" value="/" onclick="nhap('chia')"></td>
+            </tr>
+            <tr>
+                <td><input type="button" id="pi" value="Math.PI" onclick="nhap('pi')"></td>
+                <td><input type="button" id="cos" value="Math.cos" onclick="nhap('cos')"></td>
+                <td><input type="button" id="log" value="Math.log" onclick="nhap('log')"></td>
+                <td><input type="button" id="bon" value="4" style="background-color:white" onclick="nhap('bon')"></td>
+                <td><input type="button" id="nam" value="5" style="background-color:white" onclick="nhap('nam')"></td>
+                <td><input type="button" id="sau" value="6" style="background-color:white" onclick="nhap('sau')"></td>
+                <td><input type="button" id="nhan" value="*" onclick="nhap('nhan')"></td>
+            </tr>
+            <tr>
+                <td><input type="button" id="e" value="e" onclick="nhap('e')"></td>
+                <td><input type="button" id="tan" value="Math.tan" onclick="nhap('tan')"></td>
+                <td><input type="button" id="can" value="Math.sqrt" onclick="nhap('can')"></td>
+                <td><input type="button" id="mot" value="1" style="background-color:white" onclick="nhap('mot')"></td>
+                <td><input type="button" id="hai" value="2" style="background-color:white" onclick="nhap('hai')"></td>
+                <td><input type="button" id="ba" value="3" style="background-color:white" onclick="nhap('ba')"></td>
+                <td><input type="button" id="tru" value="-" onclick="nhap('tru')"></td>
+            </tr>
+            <tr>
+                <td><input type="button" id="ans" value="Ans" onclick="nhap('ans')"></td>
+                <td><input type="button" id="exp" value="Math.exp" onclick="nhap('exp')"></td>
+                <td><input type="button" id="lt2" value="Math.pow" onclick="nhap('lt2')"></td>
+                <td><input type="button" id="khong" value="0" style="background-color:white" onclick="nhap('khong')"></td>
+                <td><input type="button" id="cham" value="." onclick="nhap('cham')"></td>
+                <td><input type="button" id="bang" value="=" style="background-color: blue" onclick="tinh()"></td>
+                <td><input type="button" id="cong" value="+" onclick="nhap('cong')"></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
+<script>
+    function nhap(nameId) {
+       document.getElementById('val').value=document.getElementById('val').value+document.getElementById(nameId).value;
+    }
+    function xoa() {
+        document.getElementById('val').value="";
+    }
+    function tinh() {
+        var kq;
+        kq=document.getElementById('val').value;
+        var end;
+        end=eval(kq);
+        document.getElementById('val').value=end;
+    }
+</script>

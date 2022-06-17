@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ứng dụng máy tính </title>
+</head>
+<body>
+    <form>
+        <table>
+            <tr>
+                <td style="width: 120px" colspan="2"><input type="text" id="value1"/></td>
+                <td style="width: 120px" colspan="2"><input type="text" id="value2"/></td>
+            </tr>
+            <tr>
+                <td><input type="button" id="btn1" value="Addition(+)" onclick="cong()"/></td>
+                <td><input type="button" id="btn2" value="Subtraction(-)" onclick="tru()"/></td>
+                <td><input type="button" id="btn3" value="Multiplication(*)" onclick="nhan()"/></td>
+                <td><input type="button" id="btn4" value="Division(/)" onclick="chia()"/></td>
+            </tr>
+        </table>
+    </form>
+    <b id="result"></b>
+</body>
+</html>
+<script>
+    function cong() {
+        var a,b;
+        a=parseFloat(document.getElementById('value1').value);
+        b=parseFloat(document.getElementById('value2').value);
+        document.getElementById('result').innerText='result: '+(a+b);
+    }
+    function tru() {
+        var a,b;
+        a=parseFloat(document.getElementById('value1').value);
+        b=parseFloat(document.getElementById('value2').value);
+        document.getElementById('result').innerText='result: '+(a-b);
+    }
+    function nhan() {
+        var a,b;
+        a=parseFloat(document.getElementById('value1').value);
+        b=parseFloat(document.getElementById('value2').value);
+        document.getElementById('result').innerText='result: '+(a*b);
+    }
+    function chia() {
+        var a,b;
+        a=parseFloat(document.getElementById('value1').value);
+        b=parseFloat(document.getElementById('value2').value);
+        document.getElementById('result').innerText='result: '+(a/b).toFixed(2);
+    }
+</script>

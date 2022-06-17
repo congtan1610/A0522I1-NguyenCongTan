@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ứng dụng chuyển đổi tiền tệ</title>
+</head>
+<body>
+    <form action="" method="post ">
+        <table>
+            <tr>
+                <th>Amount</th>
+                <th>From Currency</th>
+                <th>To Currency</th>
+                <th></th>
+            </tr>
+            <tr>
+                <td><input type="text" id="tien"></td>
+                <td>
+                    <select style="width: 100px" id="a">
+                        <option>vietnam</option>
+                        <option>usd</option>
+                    </select>
+                </td>
+                <td>
+                    <select style="width: 100px" id="b">
+                        <option>vietnam</option>
+                        <option>usd</option>
+                    </select>
+                </td>
+                <td><input type="button" name="btn" value="Convert" onclick="doi()" ></td>
+            </tr>
+        </table>
+    </form>
+    <b id="result"></b>
+</body>
+</html>
+<script>
+    function doi() {
+        var t,a,b;
+        t=parseFloat(document.getElementById('tien').value);
+        a=document.getElementById('a').value;
+        b=document.getElementById('b').value;
+            if(a==b)
+                if(b=="vietnam") document.getElementById('result').innerText='Result : '+t+' VND';
+                else document.getElementById('result').innerText='Result : '+t+' USD';
+            else
+                if(b=="vietnam") document.getElementById('result').innerText='Result : '+(t*23000)+' VND';
+                else document.getElementById('result').innerText='Result : '+(t/23000)+' USD';
+    }
+</script>
