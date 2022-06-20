@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>kiểm tra năm nhuận</title>
+</head>
+<body>
+<script>
+    var year=parseInt(prompt('nhap nam'));
+    if (year%4==0)
+        if (year%100!=0)
+            alert('nam vua nhap la nam nhuan');
+        else if(year%400==0)
+            alert('nam vua nhap la nam nhuan');
+        else alert('nam vua nhap khong phai la nam nhuan');
+    else alert('nam vua nhap khong phai nam nhuan');
+</script>
+</body>
+</html>
