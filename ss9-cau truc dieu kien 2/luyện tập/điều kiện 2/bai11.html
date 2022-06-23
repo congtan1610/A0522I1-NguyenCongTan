@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bài 11</title>
+</head>
+<body>
+<script>
+    confirm('tinh thue thu nhap ca nhan chua giam tru');
+    var a=parseFloat(prompt('thu nhap(vnd):'));
+    if(a>80000000)
+        confirm('thue la '+((35*a)/100-9850000).toFixed(1)+' vnd');
+    else if(a>52000000)
+        confirm('thue la '+((30*a)/100-5850000).toFixed(1)+' vnd');
+    else if(a>32000000)
+        confirm('thue la '+((25*a)/100-3250000).toFixed(1)+' vnd');
+    else if(a>18000000)
+        confirm('thue la '+((20*a)/100-1650000).toFixed(1)+' vnd');
+    else if(a>10000000)
+        confirm('thue la '+((15*a)/100-750000).toFixed(1)+' vnd');
+    else if(a>5000000)
+        confirm('thue la '+((10*a)/100-250000).toFixed(1)+' vnd');
+    else
+        confirm('thue la '+((5*a)/100).toFixed(1)+' vnd');
+</script>
+</body>
+</html>

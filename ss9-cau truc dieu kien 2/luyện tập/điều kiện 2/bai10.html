@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bài 10</title>
+</head>
+<body>
+<script>
+    confirm('tinh gia dien sinh hoat theo EVN');
+    var a=parseFloat(prompt('nhap so dien da tieu thu (kWh):'));
+    var one=1678*a;
+    var two=1734*(a-50)+(1678*50);
+    var three=2014*(a-100)+(1734*50)+(1678*50);
+    var four= 2536*(a-200)+(2014*100)+(1734*50)+(1678*50);
+    var five=2834*(a-300)+(2536*100)+(2014*100)+(1734*50)+(1678*50);
+    var six=2927*(a-400)+(2834*100)+(2536*100)+(2014*100)+(1734*50)+(1678*50);
+    if(a>=401)
+        confirm('tong tien la '+six.toFixed(1)+' vnd');
+    else if (a>=301)
+        confirm('tong tien la '+five.toFixed(1)+' vnd');
+    else if (a>=201)
+        confirm('tong tien la '+four.toFixed(1)+' vnd');
+    else if (a>=101)
+        confirm('tong tien la '+three.toFixed(1)+' vnd');
+    else if (a>=51)
+        confirm('tong tien la '+two.toFixed(1)+' vnd');
+        else confirm('tong tien la '+one.toFixed(1)+' vnd');
+</script>
+</body>
+</html>

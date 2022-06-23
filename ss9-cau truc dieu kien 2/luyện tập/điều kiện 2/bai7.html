@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bài 7</title>
+</head>
+<body>
+<script>
+    confirm('nhap he so a,b,c de tinh phuong trinh bac hai');
+    var a=prompt('nhap a');
+    var b=prompt('nhap b');
+    var c=prompt('nhap c');
+    var d=b*b-4*a*c;
+    if(a==0){
+        if (b==0) confirm('phuong trinh da cho vo nghiem');
+        else if (c==0) confirm('phuong trinh da cho co vo so nghiem');
+        else confirm('phuong trinh da cho co nghiem la '+(-c/b).toFixed(2));
+    }
+    else
+        if (d<0) confirm('phuong trinh da cho vo nghiem');
+        else if (d==0) confirm('phuong trinh da cho co nghiem kep la '+(-b/(2*a)).toFixed(2));
+            else confirm('phuong trinh da cho co hai nghiem la '+((-b+Math.sqrt(d))/(2*a)).toFixed(2)+' va '+((-b-Math.sqrt(d))/(2*a)).toFixed(2));
+
+</script>
+</body>
+</html>
