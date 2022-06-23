@@ -4,42 +4,41 @@
     <meta charset="UTF-8">
     <title>Puzzle Game</title>
     <style>
-        td{
+        td {
             width: 300px;
             height: 50px;
             padding: 10px;
         }
-        button{
+
+        button {
             width: 500px;
             height: 100px;
         }
     </style>
 </head>
 <body>
-<table id="t" onchange="check()" border="5px">
+<table id="t" onchange="check()">
     <tr>
-        <td><button type="button" style="background-image: url('b.jpg');" id="mot" onclick="jun('mot')" ></button></td>
+        <td>
+            <button type="button" style="background-image: url('b.jpg');" id="mot" onclick="jun('mot')"></button>
+        </td>
     </tr>
     <tr>
-        <td><button type="button" style="background-image: url('b.jpg');" id="hai" onclick="jun('hai')"></button></td>
+        <td>
+            <button type="button" style="background-image: url('b.jpg');" id="hai" onclick="jun('hai')"></button>
+        </td>
     </tr>
     <tr>
-        <td><button type="button" style="background-image: url('b.jpg');" id="ba" onclick="jun('ba')"></button></td>
+        <td>
+            <button type="button" style="background-image: url('b.jpg');" id="ba" onclick="jun('ba')"></button>
+        </td>
     </tr>
 </table>
 </body>
 </html>
 <script>
     function jun(nameId) {
-        var elm=document.getElementById(nameId);
-        elm.style.backgroundImage="url('a.jpg')";
-    }
-    function check() {
-        var m=document.getElementById('t');
-        var elm1=document.getElementById('mot').value;
-        var elm2=document.getElementById('hai').value;
-        var elm3=document.getElementById('ba').value;
-        if(elm1===elm2===elm3)
-            m.style.borderColor='red';
+        var elm = document.getElementById(nameId);
+
     }
 </script>
