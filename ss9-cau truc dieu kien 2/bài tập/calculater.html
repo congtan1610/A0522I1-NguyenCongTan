@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>máy tính đơn giản</title>
+    <style>
+        td{
+            width: 50px;
+            text-align: center;
+        }
+        input{
+            width: 30px;
+            color: blue;
+        }
+        div{
+            margin-left:500px;
+            border: 1px solid;
+            width: 220px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <table>
+        <tr>
+            <th colspan="4" ><input type="text" id="val" style="width: 190px"></th>
+        </tr>
+        <tr>
+            <td><input type="button" id="1" value="1" onclick="nhap('1')"></td>
+            <td><input type="button" id="2" value="2" onclick="nhap('2')"></td>
+            <td><input type="button" id="3" value="3" onclick="nhap('3')"></td>
+            <td><input type="button" id="+" value="+" onclick="nhap('+')"></td>
+        </tr>
+        <tr>
+            <td><input type="button" id="4" value="4" onclick="nhap('4')"></td>
+            <td><input type="button" id="5" value="5" onclick="nhap('5')"> </td>
+            <td><input type="button" id="6" value="6" onclick="nhap('6')"></td>
+            <td><input type="button" id="-" value="-" onclick="nhap('-')"></td>
+        </tr>
+        <tr>
+            <td><input type="button" id="7" value="7" onclick="nhap('7')"></td>
+            <td><input type="button" id="8" value="8" onclick="nhap('8')"></td>
+            <td><input type="button" id="9" value="9" onclick="nhap('9')"></td>
+            <td><input type="button" id="*" value="*" onclick="nhap('*')"></td>
+        </tr>
+        <tr>
+            <td><input type="button" id="C" value="C" onclick="xoa()"></td>
+            <td><input type="button" id="0" value="0" onclick="nhap('0')"></td>
+            <td><input type="button" id="=" value="=" onclick="tinh()"></td>
+            <td><input type="button" id="/" value="/" onclick="nhap('/')"></td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>
+<script>
+    function nhap(nameId) {
+        document.getElementById('val').value=document.getElementById('val').value+document.getElementById(nameId).value;
+    }
+    function xoa() {
+        document.getElementById('val').value='';
+    }
+    function tinh() {
+        var n,m;
+        n=document.getElementById('val').value;
+        m=eval(n);
+        document.getElementById('val').value=m.toFixed(6);
+    }
+</script>
