@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Do you love me</title>
 </head>
-<body   >
+<body>
 <h1>Do you love me?</h1>
 <input type="button" value="Yes" id="yes" onclick="f()"/>
 <input type="button" value="No" id="no" onmouseover="f1()"/>
@@ -13,16 +13,19 @@
 <script>
     window.onload = init;
     var m = document.getElementById('no');
+
     function f() {
         confirm('<3');
     }
+
     function f1() {
-        m.style.left=parseInt(m.style.left)+ 50+'px';
-        m.style.top=parseInt(m.style.top)+ 50+'px';
+        m.style.left = parseInt(m.style.left) + 50 + 'px';
+        m.style.top = parseInt(m.style.top) + 50 + 'px';
     }
+
     function init() {
         m.style.position = 'relative';
         m.style.left = '0px';
-        m.style.top='0px';
+        m.style.top = '0px';
     }
 </script>

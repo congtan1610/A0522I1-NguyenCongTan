@@ -17,7 +17,7 @@
     </style>
 </head>
 <body>
-<table id="t" onchange="check()">
+<table>
     <tr>
         <td>
             <button type="button" style="background-image: url('b.jpg');" id="mot" onclick="jun('mot')"></button>
@@ -37,8 +37,14 @@
 </body>
 </html>
 <script>
+    var elm = document.getElementById(nameId);
     function jun(nameId) {
-        var elm = document.getElementById(nameId);
-
+        for (var i=1;i<=100;i++)
+            if ((i%2)==0)
+        elm.style.backgroundImage="url('a.jpg')";
+            else elm.style.backgroundImage="url('b.jpg')";
+    }
+    function click(nameId) {
+        if (elm.click) jun(nameId);
     }
 </script>
