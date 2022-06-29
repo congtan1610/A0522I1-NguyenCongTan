@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bài 3</title>
+</head>
+<body>
+<script>
+    var i = 1, j = 1;
+    for (i; i <= 5; i++){
+        for (j; j <= 5; j++)
+           if(j==1||(j==2&&i>=2)||(j==3&&i>=3)||(j==4&&i>=4)||i==5)
+            document.writeln('*');
+        document.writeln('<br>');
+        j=1;
+    }
+    document.writeln('<br>');
+    for (var a=11; a <= 15; a++){
+        for (var b=11; b <= 15; b++)
+            if(a==11||(a==12&&b>=12)||(a==13&&b>=13)||(a==14&&b>=14)||b==15)
+                document.writeln('*');
+        document.writeln('<br>');
+        b=1;
+    }
+    document.writeln('<br>');
+    for (var m=21; m <= 25; m++){
+        for (var n=21; n <= 25; n++)
+            if(m==21||(m==22&&n>=22)||(m==23&&n>=23)||(m==24&&n>=24)||n==25)
+                document.writeln('*');
+            else document.writeln('&nbsp&nbsp');
+        document.writeln('<br>');
+        n=1;
+    }
+    document.writeln('<br>');
+    for (var p=31; p <= 35; p++){
+        for (var q=31; q <= 35; q++)
+            if(q==35||(q==34&&p>=32)||(q==33&&p>=33)||(q==32&&p>=34)||p==35)
+                document.writeln('*');
+            else document.writeln('&nbsp&nbsp');
+        document.writeln('<br>');
+        q=1;
+    }
+
+</script>
+</body>
+</html>

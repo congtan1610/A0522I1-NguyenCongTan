@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bài 4</title>
+</head>
+<body>
+<script>
+    var t = 0, g = 1,s = 1;
+    confirm('so fibo dau tien chia het cho 5')
+    for (s; s <= 1000000; s++) {
+        if (s == (t + g)) {
+            t = g;
+            g = s;
+            if (s % 5 == 0) {
+                document.writeln(s);
+                break;
+            }
+        }
+    }
+</script>
+</body>
+</html>

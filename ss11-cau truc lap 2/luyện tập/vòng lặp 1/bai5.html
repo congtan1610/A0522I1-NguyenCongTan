@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bài 5</title>
+</head>
+<body>
+<script>
+    var number = prompt('nhap so luong so fibonanci muon tinh tong');
+    var count = 1;
+    var t = 0, g = 1, s = 1;
+    var p = 0;
+    document.writeln(0);
+    while (count < number) {
+        for (s; s <= number * 1000000; s++) {
+            if (s == (t + g)) {
+                document.writeln(s);
+                t = g;
+                g = s;
+                p = p + s;
+                count++;
+                break;
+            }
+        }
+    }
+    document.writeln('<br/>tong cua ' + number + ' fibo dau tien la ' + p);
+</script>
+</body>
+</html>

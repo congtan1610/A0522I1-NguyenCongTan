@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bài 3</title>
+</head>
+<body>
+<script>
+    var number=prompt('nhap so luong so fibonanci muon in ra');
+    var count=1;
+    var t=0,g=1,s=1;
+    document.writeln(0);
+    while (count<number){
+        for ( s;s<=number*1000000;s++){
+            if(s==(t+g)){
+                document.writeln(s);
+                t=g;
+                g=s;
+                count++;
+                break;
+            }
+        }
+    }
+</script>
+</body>
+</html>

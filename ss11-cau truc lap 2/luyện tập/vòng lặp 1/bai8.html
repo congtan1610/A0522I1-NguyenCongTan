@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bài 8</title>
+</head>
+<body>
+<button type="button" value="Chơi" id="btn" onclick="f()">Chơi</button>
+<script>
+    function f() {
+        var n = prompt('nhap khoang muon doan');
+        var a = Math.floor(Math.random() * n);
+        var s = prompt('so ban doan la');
+        for (var i = 1; i <= 2; i++) {
+            if (s == a) {
+                confirm('chuc mung');
+                document.getElementById('btn').innerText='Chơi lại';
+                break;
+            } else if (s > a) {
+                s = prompt('so vua nhap lon hon-moi nhap lai');
+            } else {
+                s = prompt('so vua nhap nho hon-moi nhap lai');
+            }
+            if (i == 2) {
+                confirm('da het luout doan');
+                document.getElementById('btn').innerText='Chơi lại';
+            }
+        }
+    }
+</script>
+</body>
+</html>

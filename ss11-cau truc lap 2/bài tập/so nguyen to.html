@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>20 số nguyên tố đầu tiên</title>
+</head>
+<body>
+<script>
+    var number = prompt('ban muon in ra bao nhieu so nguyen to?');
+    var count = 0, n = 2;
+    while (count < number) {
+        for (n; n <= (number*10); n++) {
+            var s = 0;
+            for (var i = 1; i <= n; i++) {
+                if (n % i == 0)
+                    s = s + i;
+            }
+            if (s == n + 1)
+            {
+                document.writeln(n);
+                count++;
+                n++;
+                break;
+            }
+        }
+    }
+</script>
+</body>
+</html>
