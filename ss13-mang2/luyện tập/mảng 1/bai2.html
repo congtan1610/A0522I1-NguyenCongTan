@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bài 2</title>
+</head>
+<body>
+<script>
+    var arr = [1, 2, 32, 43, 2432, 433243432, 5, 122, 1, 3];
+    var max = 0;
+    var vt = 0;
+    for (var i = 0; i <= arr.length - 1; i++) {
+        if (arr[i] > max) {
+            max = arr[i];
+            vt = i;
+        }
+    }
+    document.writeln('so lon nhat trong mang la: ' + max);
+    document.writeln('<br>');
+    document.writeln('vi tri: ' + vt);
+</script>
+</body>
+</html>

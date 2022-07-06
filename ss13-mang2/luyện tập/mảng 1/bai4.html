@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bài 4</title>
+</head>
+<body>
+<script>
+    var arr = [];
+    var a = prompt('nhap so phan tu mang');
+    for (var i = 0; i <= a - 1; i++) {
+        arr[i] = prompt('nhap phan tu thu ' + i);
+    }
+    document.writeln('mang da nhap: ' + arr);
+    var newarr = [];
+    for (var m = 0; m <= arr.length - 1; m++) {
+        newarr[m] = arr[arr.length - 1 - m];
+    }
+    document.writeln('<br>');
+    document.writeln('mang dao nguoc la: ' + newarr);
+</script>
+</body>
+</html>

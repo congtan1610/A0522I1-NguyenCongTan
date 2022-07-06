@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>từ điển</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>English</th>
+        <td></td>
+        <th>Vietnamese</th>
+    </tr>
+    <tr>
+        <td><input type="text" id="E"></td>
+        <th><input type="button" value="Search" id="search" onclick="search()"></th>
+        <td><input type="text" id="V"></td>
+    </tr>
+</table>
+<script>
+
+    function search() {
+        var arr1 = ['one', 'two', 'three'];
+        var arr2 = ['một', 'hai', 'ba'];
+        var e = document.getElementById('E').value;
+        for (var i = 0; i <= arr1.length - 1; i++) {
+            if (arr1[i] == e) {
+                document.getElementById('V').value = arr2[i];
+            }
+        }
+    }
+</script>
+</body>
+</html>

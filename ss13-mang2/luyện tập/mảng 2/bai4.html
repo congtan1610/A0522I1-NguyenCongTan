@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bài 4</title>
+</head>
+<body>
+<script>
+    var chuoi=prompt('nhap chuoi');
+    let s=0;
+    for (let i=0;i<=chuoi.length-1;i++){
+        if(isNaN(chuoi[i])){
+            s+=1;
+        }
+    }
+    document.write(chuoi);
+    document.write('<br>');
+    document.write('co '+s+' tu trong chuoi');
+</script>
+</body>
+</html>

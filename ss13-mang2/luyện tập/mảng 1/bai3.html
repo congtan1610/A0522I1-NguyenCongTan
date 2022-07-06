@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bài 3</title>
+</head>
+<body>
+<script>
+    var arr = [1, 2, 3];
+    var max = 0;
+    var s = 0;
+    var avg;
+    for (var i = 0; i <= arr.length - 1; i++) {
+        if (arr[i] > max) {
+            max = arr[i];
+        }
+        s += arr[i];
+    }
+    avg = Math.round(s / arr.length, 2);
+    document.writeln('so lon nhat trong mang la: ' + max);
+    document.writeln('<br>');
+    document.writeln('gia tri trung binh cua mang la: ' + avg);
+</script>
+</body>
+</html>

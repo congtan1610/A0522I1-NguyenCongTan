@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bài 5</title>
+</head>
+<body>
+<script>
+    var arr1 = prompt('chuoi 1');
+    var arr2 = prompt('chuoi 2');
+    var s = true;
+    if (arr1.length == arr2.length) {
+        for (let i = 0; i <= arr1.length - 1; i++) {
+            if (arr1[i] != arr2[i]) {
+                s = false;
+            }
+        }
+        if (s) {
+            document.write('hai chuoi nhap vao giong nhau');
+        } else {
+            document.write('hai chuoi nhap vao khong giong nhau');
+        }
+    } else {
+        document.write('hai chuoi nhap vao khong giong nhau');
+    }
+
+</script>
+</body>
+</html>

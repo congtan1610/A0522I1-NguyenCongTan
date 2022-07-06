@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bài 6</title>
+</head>
+<body>
+<script>
+    var s=prompt('nhap so phan tu mang');
+    var arr=[];
+    for (let i=0;i<s;i++){
+        arr[i]=prompt('nhap phan tu thu '+i);
+    }
+    for (let i=0;i<=arr.length-1;i++){
+        if (arr[i]==='-'){
+            arr[i]='_';
+        }
+    }
+    document.write(arr);
+</script>
+</body>
+</html>

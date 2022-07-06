@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bài 7</title>
+</head>
+<body>
+<script>
+    var arr = new Array(10);
+    for (var i = 0; i <= arr.length - 1; i++) {
+        arr[i] = prompt('nhap phan tu thu ' + i);
+    }
+    var V = prompt('nhap V');
+    var t = 0;
+    for (var m = 0; m <= arr.length - 1; m++) {
+        if (V == arr[m]) {
+            t = 1;
+            var vt = m;
+        }
+    }
+    document.writeln('mang da nhap la: ' + arr);
+    document.writeln('<br>');
+    if (t == 1) {
+        document.writeln('V is in the array');
+        for (vt; vt <= arr.length - 1; vt++) {
+            arr[vt] = arr[vt + 1];
+        }
+        arr[arr.length - 1] = 0;
+        document.writeln('<br>');
+        document.writeln('mang sau khi xoa V la: ' + arr);
+    } else {
+        document.writeln('V is not in the array');
+    }
+
+</script>
+</body>
+</html>

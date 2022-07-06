@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bài 6</title>
+</head>
+<body>
+<script>
+    var arr = new Array(10);
+    for (var i = 0; i <= arr.length - 1; i++) {
+        arr[i] = prompt('nhap phan tu thu ' + i + ' cua mang');
+    }
+    var V = prompt('nhap V');
+    var t = 0;
+    for (var m = 0; m <= arr.length - 1; m++) {
+        if (V == arr[m]) {
+            t = 1;
+        }
+    }
+    if (t == 1) {
+        document.writeln('V is in the array');
+    } else {
+        document.writeln('V is not in the array');
+    }
+
+</script>
+</body>
+</html>
