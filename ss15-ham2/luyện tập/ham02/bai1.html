@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bình phương của một số bất kì</title>
+</head>
+<body>
+<input type="text" id="num"/><button onclick="bp(document.getElementById('num').value)">bình phương</button><b id="result"></b>
+<script>
+    function bp(number) {
+        return document.getElementById ('result').innerText=+number*number ;
+    }
+</script>
+</body>
+</html>

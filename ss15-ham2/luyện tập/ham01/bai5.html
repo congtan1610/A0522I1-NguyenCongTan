@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bài 5</title>
+</head>
+<body>
+<script>
+    let arr1 = ['Polaris', 'Aldebaran', 'Deneb', 'Vega', 'Altair', 'Dubhe', 'Regulus'];
+    let arr2 = ['Ursa Minor', 'Tarurus', 'Cygnus', 'Lyra', 'Aquila', 'Ursa Major', 'Leo'];
+
+    function search(sao) {
+        for (let i = 0; i <= arr1.length - 1; i++) {
+            if (sao == arr1[i]) {
+                return document.write(arr2[i]);
+            } else {
+                return document.write('khong tim thay');
+            }
+        }
+    }
+
+    let a = prompt('nhap chom sao');
+    search(a);
+</script>
+</body>
+</html>

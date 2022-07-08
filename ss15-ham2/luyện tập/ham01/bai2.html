@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bài 2</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>Number</th>
+        <th></th>
+        <th>Result</th>
+    </tr>
+    <tr>
+        <th><input type="text" id="number"/></th>
+        <th><button type="button" onclick="f(document.getElementById('number').value)">click me</button></th>
+        <th><input type="text" id="result"/></th>
+    </tr>
+</table>
+<script>
+    function f(number) {
+    return  document.getElementById('result').value=+number+1;
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>đổi chỗ</title>
+</head>
+<body>
+<script>
+    function f(a, b) {
+        let temp = 0;
+        temp = a;
+        a = b;
+        b = temp;
+        document.write('a = ' + a + ', b = ' + b);
+    }
+
+    let a = +prompt('nhap a:');
+    let b = +prompt('nhap b:');
+    f(a, b);
+</script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>chu vi & dien tich hinh tron</title>
+</head>
+<body>
+<input type="text" id="num1"/><button onclick="dt(document.getElementById('num1').value)">diện tích</button><b id="result1"></b><br>
+<input type="text" id="num2"/><button onclick="cv(document.getElementById('num2').value)">chu vi</button><b id="result2"></b>
+<script>
+    function dt(bk) {
+        return document.getElementById('result1').innerText=+3.14*bk*bk;
+    }
+    function cv(bk) {
+        return document.getElementById('result2').innerText=+3.14*bk*2;
+    }
+</script>
+</body>
+</html>

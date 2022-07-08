@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>feet-meter</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>Feet</th>
+        <th></th>
+        <th>Meter</th>
+    </tr>
+    <tr>
+        <td><input type="text" id="feet"></td>
+        <td>
+            <button type="button" id="btn" onclick="btn()" style="width: 100px">Change</button>
+        </td>
+        <td><input type="text" id="meter"></td>
+    </tr>
+</table>
+<script>
+    function feetToMeter(feet) {
+        return 0.305 * feet;
+    }
+
+    function meterToFoot(meter) {
+        return 3.279 * meter;
+    }
+
+    function btn() {
+        let a = document.getElementById('feet').value;
+        let b = document.getElementById('meter').value;
+        if (a != '' & b != '') {
+            document.getElementById('feet').value = '';
+            document.getElementById('meter').value = '';
+            document.getElementById('btn').innerText='Change';
+        } else if (a == '' & b == '') {
+            document.getElementById('feet').value = '';
+            document.getElementById('meter').value = '';
+            document.getElementById('btn').innerText='Change';
+        } else {
+            if (a != '') {
+                document.getElementById('meter').value = feetToMeter(a).toFixed(3);
+                document.getElementById('btn').innerText='Delete';
+            } else {
+                document.getElementById('feet').value = meterToFoot(b).toFixed(3);
+                document.getElementById('btn').innerText='Delete';
+            }
+        }
+    }
+</script>
+</body>
+</html>

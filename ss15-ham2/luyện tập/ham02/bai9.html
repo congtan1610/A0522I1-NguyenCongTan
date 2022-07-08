@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>kiểm tra kí tự</title>
+</head>
+<body>
+<script>
+    function check(arr,string) {
+        let s=0;
+        for (let i=0;i<=arr.length-1;i++){
+            if (arr[i]===string){
+                s+=1;
+            }
+        }
+        if(s>0){
+           return  document.writeln('ki tu '+string+' xuat hien '+s+' lan');
+        }
+        else {return  document.writeln('-1');}
+    }
+    let arr=[];
+    let a=+prompt('nhap so phan tu mang');
+    for (let i=0;i<=a-1;i++){
+        arr[i]=prompt('nhap phan tu thu '+i);
+    }
+    let string=prompt('nhap ki tu');
+    check(arr,string);
+</script>
+</body>
+</html>

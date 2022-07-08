@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>min</title>
+</head>
+<body>
+<script>
+    let a=+prompt('nhap so thu nhat');
+    let b=+prompt('nhap so thu hai');
+    let c=+prompt('nhap so thu ba');
+    function min(a,b,c) {
+        if (a<b&&a<c) document.write(+a+' la so nho nhat');
+        if (b<a&&b<c) document.write(+b+' la so nho nhat');
+        if (c<b&&c<a) document.write(+c+' la so nho nhat');
+    }
+    min(a,b,c);
+</script>
+</body>
+</html>

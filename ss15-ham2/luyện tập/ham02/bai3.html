@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>giai thừa của một số bất kì</title>
+</head>
+<body>
+<script>
+    function gt(number2) {
+        let s=1;
+        for (let i=1;i<=number2;i++){
+            s*=i;
+        }
+        return s;
+    }
+    let num = +prompt('nhap so muon tinh giai thua');
+    alert(gt(num));
+</script>
+</body>
+</html>
