@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>kiểm tra từ đối xứng</title>
+</head>
+<body>
+<script>
+    function isPalindrome(s){
+        let a=true;
+        if (s.length%2==0){
+            for (let i=0;i<=(s.length-1)/2;i++){
+                if (s[i]!=s[s.length-1-i]){
+                    a=false;
+                }
+            }
+            if (a){document.writeln(s+' la chuoi doi xung')}
+            else {document.writeln(s+' khong phai la chuoi doi xung')}
+        }
+        else {
+            document.writeln(s+' khong phai la chuoi doi xung')
+        }
+
+    } ;
+    let string=prompt('nhap chuoi');
+    isPalindrome(string);
+</script>
+</body>
+</html>
