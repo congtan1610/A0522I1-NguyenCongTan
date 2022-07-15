@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>xây dựng lớp mô tả hình chữ nhật</title>
+</head>
+<body>
+<b id="content"></b><br>
+<canvas id="myCanvas1" width="1000px" height="500px" style="border:1px solid #d3d3d3;margin-top: 100px;"/>
+<script>
+    class Retangle {
+        constructor(height,width) {
+            this.he = height;
+            this.wi = width;
+        }
+        area() {
+            return this.he*this.wi;
+        }
+        cv () {
+            return (this.he+this.wi) * 2;
+        }
+    }
+    let hcn1 = document.getElementById("myCanvas1").getContext("2d");
+    let rectangle1 = new Retangle(700, 100);
+    document.getElementById('content').innerText = 'dien tich:' + rectangle1.area() + ', chu vi:' + rectangle1.cv() + '(px)';
+    hcn1.fillRect(100, 100, rectangle1.he, rectangle1.wi);
+    hcn1.strokeRect();
+    hcn1.clearRect();
+</script>
+</body>
+</html>
