@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CS_3_bai1</title>
+</head>
+<body>
+<script>
+    let arr_a=[];
+    let a=+prompt('nhap so phan tu mang');
+    for (let i=0;i<a;i++){
+        arr_a[i]=+prompt('nhap a['+i+']');
+    }
+    function prefixsum(a) {
+        let b=[];
+        let s=0;
+        for (let i=0;i<a.length;i++){
+            b[i]=a[i]+s;
+            s=s+a[i];
+        }
+        return b;
+    }
+    let arr_b=prefixsum(arr_a);
+    document.writeln('mang a:'+arr_a);
+    document.writeln('<br>');
+    document.writeln('mang b:'+arr_b);
+</script>
+</body>
+</html>

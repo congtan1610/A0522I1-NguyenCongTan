@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CS_4_bai1</title>
+</head>
+<body>
+<script>
+    let chuoi = prompt('nhap chuoi');
+    let newarr = [];
+    for (let i = 0; i < chuoi.length; i++) {
+        newarr[i] = chuoi[i];
+    }
+    //xóa các kí tự trống liên tiếp
+    for (let i = 0; i < newarr.length; i++) {
+        if (newarr[i] === ' ') {
+            if (newarr[i + 1] === ' ') {
+                newarr.splice(i, 1);
+                i--;
+            }
+        }
+    }
+    //chuyển tất cả về chữ thường
+    for (let i = 0; i < newarr.length; i++) {
+        newarr[i] = newarr[i].toLowerCase();
+    }
+    //các kí tự đầu thành chữ hoa
+    for (let i = 0; i < newarr.length; i++) {
+        newarr[0] = newarr[0].toUpperCase();
+        if (newarr[i] === ' ') {
+            newarr[i + 1] = newarr[i + 1].toUpperCase();
+        }
+
+    }
+    document.writeln('xâu trước khi chuẩn hóa: ' + chuoi);
+    document.writeln('<br>');
+    document.writeln('sau khi chuẩn hóa: ' + newarr.join(''));
+
+
+
+    let tmp = [];
+    let a = 0;
+    newarr.push(' ');//thêm ' ' để kiểm tra từ cuối cùng
+    //tạo mảng mới với phần tử là các từ trong chuỗi vưa nhập
+    for (let i = 0; i < newarr.length; i++) {
+        if (newarr[i] === ' ') {
+            tmp.push(newarr.slice(a, i));
+            a = i + 1;
+        }
+    }
+
+    //so sánh độ dài các từ trong mảng vừa tạo-in kết quả
+    let tg = tmp[0].length;
+    let kq = [];
+
+    for (let i = 0; i < tmp.length; i++) {
+        if (tg <= tmp[i].length) {
+            kq = tmp[i];
+            tg = tmp[i].length;
+        }
+
+    }
+    document.writeln('<br>');
+    document.writeln('từ dài nhất: ' + kq.join(''));
+</script>
+</body>
+</html>

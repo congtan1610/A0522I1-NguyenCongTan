@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CS_2_bai1</title>
+</head>
+<body>
+<script>
+    let wage = +prompt('nhap luong');
+    if (wage < 7000000) {
+        document.writeln('luong rong:' + (wage - (wage * 5 / 100)) + ', thue thu nhap ca nhan:' + (wage * 5 / 100));
+    } else if (wage < 15000000) {
+        document.writeln('luong rong:' + (wage - (wage * 10 / 100)) + ', thue thu nhap ca nhan:' + (wage * 10 / 100));
+    } else {
+        document.writeln('luong rong:' + (wage - (wage * 20 / 100)) + ', thue thu nhap ca nhan:' + (wage * 20 / 100));
+    }
+</script>
+</body>
+</html>

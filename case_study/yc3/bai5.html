@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CS_3_bai5</title>
+</head>
+<body>
+<b>---menu---</b><br>
+<b>1 (cafe)</b><br>
+<b>2 (cam vắt)</b><br>
+<b>3(nước ép cà rốt)</b><br>
+<b>4(nước ép cà chua)</b><br>
+<b>5(nước lọc)</b><br>
+<b>6(nước dừa)</b><br>
+<b>7(thoát gọi món)</b><br>
+<b>mời chọn</b>
+<input type="text" id="n">
+<button id="btn" onclick="f()">OK</button><br>
+<b id="d">đơn giá: </b>
+<br>
+<b id="dq">tổng tiền: </b>
+<script>
+
+    function f() {
+        let na=+document.getElementById('n').value;
+            switch (na) {
+                case 1: {
+                    let sl = +prompt('nhap so luong');
+                    document.getElementById('d').innerText='đơn giá: 10000 x'+sl;
+                    document.getElementById('dq').innerText='tổng tiền: '+(sl*10000);
+                }
+            }
+
+    }
+</script>
+</body>
+</html>

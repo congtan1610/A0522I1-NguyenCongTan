@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CS_4_bai2</title>
+</head>
+<body>
+<script>
+    let string=prompt('nhập xâu kí tự ');
+    let newarr=[];
+    for (let i=0;i<string.length;i++){
+        newarr[i]=string[i];
+    }
+    function differentSymbolsNaive(s) {
+        for (let i = 0; i < s.length - 1; i++) {
+            for (let j = i+1; j < s.length; j++) {
+                if (s[i] == s[j]) {
+                    s.splice(j, 1);
+                    j--;
+                }
+            }
+        }
+        return s.length;
+    }
+    function printDifferentSymbol(s) {
+        for (let i = 0; i < s.length - 1; i++) {
+            for (let j = i+1; j < s.length; j++) {
+                if (s[i] == s[j]) {
+                    s.splice(j, 1);
+                    j--;
+                }
+            }
+        }
+        for (let i=1;i<s.length-1;i++){
+            s[0]=s[0]+', '+s[i];
+        }
+        s[0]=s[0]+' và '+s[s.length-1]+'.';
+        return s[0];
+    }
+
+    document.writeln('chuỗi vừa nhập: '+string);
+    document.writeln('<br>');
+    document.writeln('có '+differentSymbolsNaive(newarr)+' kí tự khác nhau là '+printDifferentSymbol(newarr));
+</script>
+</body>
+</html>

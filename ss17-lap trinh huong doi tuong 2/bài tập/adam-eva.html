@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>adam-eva</title>
+</head>
+<body>
+<script>
+    class Apple {
+        setWeightA() {
+            this.weightA = 10;
+        }
+
+        decreaseWeightA() {
+            return this.weightA--;
+        }
+
+        getWeightA() {
+            return this.weightA;
+        }
+
+        isEmpty() {
+            if (this.weightA > 0) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    }
+
+    class Human {
+        constructor(name, gender, weight) {
+            this.name = name;
+            this.gender = gender;
+            this.weight = weight;
+        }
+
+        setName(name) {
+            this.name = name;
+        }
+
+        getName() {
+            return this.name;
+        }
+
+        setGender(gender) {
+            this.gender = gender;
+        }
+
+        getGender() {
+            return this.gender;
+        }
+
+        setWeight(weight) {
+            this.weight = weight;
+        }
+
+        getWeight() {
+            return this.weight;
+        }
+
+        isMale() {
+            if (this.gender) {
+                return 'nam';
+            } else {
+                return 'nữ';
+            }
+        }
+
+        checkApple(apple) {
+            if (apple.isEmpty()) {
+                console.log('táo còn ' + apple.getWeightA());
+            } else console.log('táo hết');
+        }
+
+        say(String) {
+            return console.log(this.name + ':' + String);
+        }
+
+        eat(Apple) {
+            return Apple.decreaseWeightA();
+        }
+    }
+
+    let Apple1 = new Apple();
+    Apple1.setWeightA();
+    let Adam = new Human('Adam', true, 50);
+    let Eva = new Human('Eva', false, 40);
+    console.log('ngày xữa ngày xưa, có một đôi tình nhân nghèo rớt mồng tơi, chỉ có một trái táo để ăn, ' + Adam.isMale() + ' tên là ' + Adam.getName() + ' nặng ' + Adam.getWeight() + ', ' + Eva.isMale() + ' tên là ' + Eva.getName() + ' nặng ' + Eva.getWeight());
+    Adam.checkApple(Apple1);
+    console.log(' ');
+    do {
+        Adam.say("'cho anh miếng'");
+        Eva.say("'ok'");
+        Adam.eat(Apple1);
+        Adam.setWeight(Adam.getWeight() + 1);
+        console.log(Adam.getName() + ' nặng ' + Adam.getWeight());
+        Adam.checkApple(Apple1);
+        console.log(' ');
+        Eva.say("'cho anh miếng'");
+        Adam.say("'ok'");
+        Eva.eat(Apple1);
+        Eva.setWeight(Eva.getWeight() + 1);
+        console.log(Eva.getName() + ' nặng ' + Eva.getWeight());
+        Eva.checkApple(Apple1);
+        console.log(' ');
+    }
+    while (Apple1.isEmpty());
+</script>
+</body>
+</html>

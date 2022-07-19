@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>quản lí sản phẩm</title>
+</head>
+<body>
+<h2>Add New Product</h2>
+    <input type="text" id="name"/>
+    <button type="button" id="add" name="add" value="add" style="background-color: green" onclick="show()">Add</button>
+<h2>Display All Product</h2>
+<script>
+    let arr = ['a', 'b', 'c', 'd'];
+
+    function add(a) {
+        arr.push(a);
+        alert('them thanh cong');
+    }
+
+    function show() {
+        let a = document.getElementById('name').value;
+        if(a!=''){add(a);}
+        let t = "<b>Product name</b>"
+        let sl = "<span style='margin-left: 220px;color: #d61b06'>" + arr.length + ' products' + "</span>"
+        let ht = "<table  width='auto'>"
+        for (let i = 0; i <= arr.length - 1; i++) {
+            ht = ht + "<tr>";
+            ht = ht + "<td style='width: 300px'>" + arr[i] + "</td>";
+            ht = ht + "<td><input type='submit' value='edit' style='background-color: green'/></td>";
+            ht = ht + "<td><input type='submit' value='delete' style='background-color: green'/></td>";
+            ht = ht + "</tr>";
+        }
+        ht = ht + "</table>";
+        document.writeln(t);
+        document.writeln(sl);
+        document.writeln(ht);
+    }
+
+    show(arr);
+</script>
+</body>
+</html>
