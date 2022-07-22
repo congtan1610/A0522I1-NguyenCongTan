@@ -6,21 +6,150 @@
 </head>
 <body>
 <script>
-    class Mobile  {
-        constructor(pin,memory_pocessing,memory_inbox,memory_sent) {
-            this.pin=pin;
-            this.memory1=memory_pocessing;
-            this.memory2=memory_inbox;
-            this.memory3=memory_sent;
-        }
-        on_off(subject){
-            if (subject=='on'){
-                alert('đang bật ');
-            }
-            else alert('đang tắt ');
+    class Mobile {
+        constructor() {
+            this.pin = 100;
+            this.memory_pocessing = '';//soạn
+            this.memory_inbox = '';//hộp thư đến
+            this.memory_sent = '';//thư đã gửi
+            this.status = false;
+            this.name='';
         }
 
+        getName(){
+            return this.name;
+        }
+        setName(value){
+            this.name=value;
+        }
+        getPin() {
+            return this.pin;
+        }
+
+        setPin(value) {
+            this.pin = value;
+        }
+
+        getMemory_pocessing() {
+            return this.memory_pocessing;
+        }
+
+        setMemory_pocessing(value) {
+            this.memory_pocessing = value;
+        }
+
+        getMemory_inbox() {
+            return this.memory_inbox;
+        }
+
+        setMemory_inbox(value) {
+            this.memory_inbox = value;
+        }
+
+        getMemory_sent() {
+            return this.memory_sent;
+        }
+
+        setMemory_sent(value) {
+            this.memory_sent = value;
+        }
+
+        //check trạng thái điện thoại
+        check_on_off() {
+            if (this.status) {
+                return alert('điện thoại đang bật');
+            } else {
+                return alert('điện thoại đang tắt');
+            }
+        }
+        //bật tắt điện thoại
+        on_off(onoroff) {
+            if (onoroff == 'on') {
+                return this.status = true;
+            } else {
+                return this.status = false;
+            }
+        }
+
+        //sạc
+        charging() {
+            if (this.pin < 100) {
+                return this.pin + 1;
+            }
+        }
+
+        //soạn
+        processing(subject) {
+            if (this.status) {
+                this.setMemory_pocessing(subject);
+                this.setPin(this.pin - 1);
+            } else {
+                this.check_on_off();
+            }
+        }
+
+        //gửi
+        sent(mobile) {
+            if (this.status) {
+                mobile.setMemory_inbox(this.getMemory_pocessing());
+                this.setMemory_sent(this.getMemory_pocessing());
+                this.setPin(this.pin - 1);
+            } else {
+                this.check_on_off();
+            }
+        }
+
+        //nhận mess
+        checkMess(mobile) {
+            if (this.status) {
+                if (this.getMemory_inbox() != ' ') {
+                    document.writeln(this.getName()+' đã nhận được mess');
+                    document.writeln('<br>');
+                } else {
+                    document.writeln(this.getName()+' chưa nhận được mess');
+                    document.writeln('<br>');
+                }
+                this.setPin(this.pin - 1);
+            } else {
+                this.check_on_off();
+            }
+        }
+
+        //xem  tin trong hộp thư đến
+        seenInbox() {
+            if (this.status) {
+                document.writeln('nội dung: '+this.getMemory_inbox());
+                this.setPin(this.pin - 1);
+            } else {
+                this.check_on_off();
+            }
+        }
+
+        //xem  tin đã gửi
+        seenSent() {
+            if (this.status) {
+                document.writeln(this.getMemory_sent());
+                this.setPin(this.pin - 1);
+            } else {
+                this.check_on_off();
+            }
+        }
     }
+
+    let nokia = new Mobile();
+    let iphone = new Mobile();
+    nokia.setName('nokia');
+    iphone.setName('iphone');
+    nokia.on_off('on');
+    iphone.on_off('on');
+    nokia.processing('hi, i am nokia');
+    nokia.sent(iphone);
+    iphone.checkMess(nokia);
+    iphone.seenInbox();
+    document.writeln('<br>');
+    document.writeln('nokia check pin: ' + nokia.getPin());
+    document.writeln('<br>');
+    document.writeln('iphone check pin: ' + iphone.getPin());
 </script>
 </body>
 </html>
