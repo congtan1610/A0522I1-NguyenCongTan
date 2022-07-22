@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>quản lí điện thoại</title>
+</head>
+<body>
+<button onclick="taoMoi()" style="margin-left: 1000px;margin-top: 90px">Tạo mới</button>
+<b id="result"></b>
+<script>
+    class DienThoai {
+        constructor(ten, gia, mau) {
+            this.ten = ten;
+            this.gia = gia;
+            this.mau = mau;
+        }
+
+        getTen() {
+            return this.ten;
+        }
+
+        setTen(value) {
+            this.ten = value;
+        }
+
+        getGia() {
+            return this.gia;
+        }
+
+        setGia(value) {
+            this.gia = value;
+        }
+
+        getMau() {
+            return this.mau;
+        }
+
+        setMau(value) {
+            this.mau = value;
+        }
+    }
+
+    let Nokia = new DienThoai('Nokia', 1234, 'black');
+    let array = [Nokia];
+
+    function hienThi(arr) {
+        let str = "<table border='1px' style='margin-left: 250px;margin-top: 5px' " +
+            "<tr>" +
+            "<th width='200px'>Tên</th>" +
+            "<th width='200px'>Giá</th>" +
+            "<th width='200px'>Màu</th>" +
+            "<th width='200px'>Thao tác</th>" +
+            "</tr>";
+        for (let i = 0; i < arr.length; i++) {
+            str = str + "<tr>" +
+                "<th>" + arr[i].getTen() + "</th>" +
+                "<th>" + arr[i].getGia() + "</th>" +
+                "<th>" + arr[i].getMau() + "</th>" +
+                "<th><button onclick='Sua("+i+")'>Sửa</button>&nbsp<button onclick='Xoa("+i+")'>Xóa</button></th>" +
+                "</tr>";
+        }
+        str = str + "</table>";
+        return str;
+    }
+
+    document.getElementById('result').innerHTML = hienThi(array);
+
+    function taoMoi() {
+        let tenMoi=prompt('nhập tên mới');
+        let giaMoi=prompt('nhập giá mới');
+        let mauMoi=prompt('nhập màu mới');
+        let DienThoaiMoi= new DienThoai(tenMoi,giaMoi,mauMoi);
+        array.push(DienThoaiMoi);
+        document.getElementById('result').innerHTML = hienThi(array);
+    }
+    function Sua(i) {
+        let tenMoi=prompt('nhập tên mới');
+        let giaMoi=prompt('nhập giá mới');
+        let mauMoi=prompt('nhập màu mới');
+        let DienThoaiMoi= new DienThoai(tenMoi,giaMoi,mauMoi);
+        array[i]=DienThoaiMoi;
+        document.getElementById('result').innerHTML = hienThi(array);
+    }
+    function Xoa(i) {
+        array.splice(i,1);
+        document.getElementById('result').innerHTML = hienThi(array);
+    }
+</script>
+</body>
+</html>
