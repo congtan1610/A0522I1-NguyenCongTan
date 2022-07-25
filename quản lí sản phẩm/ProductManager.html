@@ -82,8 +82,11 @@
         document.getElementById('result').innerHTML = hienThi(array);
     }
     function Xoa(i) {
-        array.splice(i,1);
-        document.getElementById('result').innerHTML = hienThi(array);
+        let Confirm= confirm('bạn có chắc muốn xóa?');
+        if(Confirm) {
+            array.splice(i, 1);
+            document.getElementById('result').innerHTML = hienThi(array);
+        }
     }
 </script>
 </body>
