@@ -21,7 +21,7 @@
 <br>
 <br>
 <button onclick="Mua()" id="mua">Mua</button>
-<button onclick="Kiemtra()">Xem kết quả</button>
+<button onclick="Kiemtra(arr)">Xem kết quả</button>
 <br>
 <br>
 <b id="result"></b>
@@ -106,67 +106,71 @@
     let Fisrt = new Number(1, 1, 1, 1, 1, 1);
     let Second = new Number(2, 2, 2, 2, 2, 2);
     let Encourage = new Number(3, 3, 3, 3, 3, 3);
-    let ticket = new Number();
-    let arr=[];
+    let arr = [];
+
     function Mua() {
         let a = +prompt('bạn có hai lựa chọn:\n 1. Bạn tự nhập số\n 2. Hệ thống tự random');
-        if (a == 1 ) {
-            let newnum= new Number(document.getElementById('num1').value,document.getElementById('num2').value,document.getElementById('num3').value,document.getElementById('num4').value,document.getElementById('num5').value,document.getElementById('num6').value);
+        if (a == 1 && arr.length < 4) {
+            let newnum = new Number(document.getElementById('num1').value, document.getElementById('num2').value, document.getElementById('num3').value, document.getElementById('num4').value, document.getElementById('num5').value, document.getElementById('num6').value);
             arr.push(newnum);
             Hienthi();
-            document.getElementById('num1').value='';
-            document.getElementById('num2').value='';
-            document.getElementById('num3').value='';
-            document.getElementById('num4').value='';
-            document.getElementById('num5').value='';
-            document.getElementById('num6').value='';
-        } else if (a == 2) {
+            document.getElementById('num1').value = '';
+            document.getElementById('num2').value = '';
+            document.getElementById('num3').value = '';
+            document.getElementById('num4').value = '';
+            document.getElementById('num5').value = '';
+            document.getElementById('num6').value = '';
+            a = 0;
+        } else if (a == 2 && arr.length < 4) {
             document.getElementById('num1').value = Math.floor(Math.random() * 100);
             document.getElementById('num2').value = Math.floor(Math.random() * 100);
             document.getElementById('num3').value = Math.floor(Math.random() * 100);
             document.getElementById('num4').value = Math.floor(Math.random() * 100);
             document.getElementById('num5').value = Math.floor(Math.random() * 100);
             document.getElementById('num6').value = Math.floor(Math.random() * 100);
-            let newnum= new Number(document.getElementById('num1').value,document.getElementById('num2').value,document.getElementById('num3').value,document.getElementById('num4').value,document.getElementById('num5').value,document.getElementById('num6').value);
+            let newnum = new Number(document.getElementById('num1').value, document.getElementById('num2').value, document.getElementById('num3').value, document.getElementById('num4').value, document.getElementById('num5').value, document.getElementById('num6').value);
+
             arr.push(newnum);
             Hienthi();
-            document.getElementById('num1').value='';
-            document.getElementById('num2').value='';
-            document.getElementById('num3').value='';
-            document.getElementById('num4').value='';
-            document.getElementById('num5').value='';
-            document.getElementById('num6').value='';
+            document.getElementById('num1').value = '';
+            document.getElementById('num2').value = '';
+            document.getElementById('num3').value = '';
+            document.getElementById('num4').value = '';
+            document.getElementById('num5').value = '';
+            document.getElementById('num6').value = '';
+            a = 0;
+        } else {
+            alert("chỉ được mua 4 vé");
         }
-    }
-    function Hienthi() {
-        let str='<table border="1px">';
-        str=str+'<tr>'+
-            '<th>Vé</th>'+
-            '</tr>';
-        for (let i=0;i<arr.length;i++){
-            str=str+'<tr>'+
-                    '<th>'+arr[i].getnum1()+' '+arr[i].getnum2()+' '+arr[i].getnum3()+' '+arr[i].getnum4()+' '+arr[i].getnum5()+' '+arr[i].getnum6()+' '+'</th>'+
-                    '</tr>'
-        }
-        str=str+'</table>';
-        document.getElementById('result').innerHTML=str;
     }
 
-    function Kiemtra() {
-        ticket.setnum1(document.getElementById('num1').value);
-        ticket.setnum2(document.getElementById('num2').value);
-        ticket.setnum3(document.getElementById('num3').value);
-        ticket.setnum4(document.getElementById('num4').value);
-        ticket.setnum5(document.getElementById('num5').value);
-        ticket.setnum6(document.getElementById('num6').value);
-        if (ticket.checkFirst(ticket)) {
-            document.getElementById('result').innerText = 'Chúc mừng bạn đã trúng giải nhất';
-        } else if (ticket.checkSecond(ticket)) {
-            document.getElementById('result').innerText = 'Chúc mừng bạn đã trúng giải nhì';
-        } else if (ticket.checkEncourage(ticket)) {
-            document.getElementById('result').innerText = 'Chúc mừng bạn đã trúng giải khuyến khích';
-        } else {
-            document.getElementById('result').innerText = 'Chúc bạn may mắn lần sau';
+    function Hienthi() {
+        let str = '<table border="1px">';
+        str = str + '<tr>' +
+            '<th>STT</th>' +
+            '<th>Vé</th>' +
+            '</tr>';
+        for (let i = 0; i < arr.length; i++) {
+            str = str + '<tr>' +
+                '<th>'+(i+1)+'</th>' +
+                '<th>' + arr[i].getnum1() + ' ' + arr[i].getnum2() + ' ' + arr[i].getnum3() + ' ' + arr[i].getnum4() + ' ' + arr[i].getnum5() + ' ' + arr[i].getnum6() + ' ' + '</th>' +
+                '</tr>'
+        }
+        str = str + '</table>';
+        document.getElementById('result').innerHTML = str;
+    }
+
+    function Kiemtra(arr) {
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i].getnum1() == Fisrt.getnum1() && arr[i].getnum2() == Fisrt.getnum2() && arr[i].getnum3() == Fisrt.getnum3() && arr[i].getnum4() == Fisrt.getnum4() && arr[i].getnum5() == Fisrt.getnum5() && arr[i].getnum6() == Fisrt.getnum6()) {
+                alert("chúc mùng bạn đã trúng giải nhất- vé " + (i+1));
+            } else if (arr[i].getnum2() == Second.getnum2() && arr[i].getnum3() == Second.getnum3() && arr[i].getnum4() == Second.getnum4() && arr[i].getnum5() == Second.getnum5() && arr[i].getnum6() == Second.getnum6()) {
+                alert("chúc mùng bạn đã trúng giải nhì- vé " + (i+1));
+            } else if (arr[i].getnum4() == Encourage.getnum4() && arr[i].getnum5() == Encourage.getnum5() && arr[i].getnum6() == Encourage.getnum6()) {
+                alert("chúc mùng bạn đã trúng giải khuyến khích- vé " + (i+1));
+            } else {
+                alert("chúc bạn may mắn lần sau- vé "+(i+1)+" không trúng");
+            }
         }
     }
 </script>

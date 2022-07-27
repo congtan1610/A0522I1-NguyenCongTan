@@ -15,22 +15,60 @@
 <b>7(thoát gọi món)</b><br>
 <b>mời chọn</b>
 <input type="text" id="n">
-<button id="btn" onclick="f()">OK</button><br>
+<button id="btn" onclick="f()">OK</button>
+<br>
 <b id="d">đơn giá: </b>
 <br>
 <b id="dq">tổng tiền: </b>
 <script>
 
     function f() {
-        let na=+document.getElementById('n').value;
+        let na = +document.getElementById('n').value;
+
             switch (na) {
                 case 1: {
+                    alert('giá: '+10000);
                     let sl = +prompt('nhap so luong');
-                    document.getElementById('d').innerText='đơn giá: 10000 x'+sl;
-                    document.getElementById('dq').innerText='tổng tiền: '+(sl*10000);
+                    document.getElementById('d').innerText = 'đơn giá: 10000 x' + sl;
+                    document.getElementById('dq').innerText = 'tổng tiền: ' + (sl * 10000);
                 }
+                    break;
+                case 2: {
+                    alert('giá: '+20000);
+                    let sl = +prompt('nhap so luong');
+                    document.getElementById('d').innerText = 'đơn giá: 20000 x' + sl;
+                    document.getElementById('dq').innerText = 'tổng tiền: ' + (sl * 20000);
+                }
+                    break;
+                case 3: {
+                    alert('giá: '+30000);
+                    let sl = +prompt('nhap so luong');
+                    document.getElementById('d').innerText = 'đơn giá: 30000 x' + sl;
+                    document.getElementById('dq').innerText = 'tổng tiền: ' + (sl * 30000);
+                }
+                    break;
+                case 4: {
+                    alert('giá: '+150000);
+                    let sl = +prompt('nhap so luong');
+                    document.getElementById('d').innerText = 'đơn giá: 150000 x' + sl;
+                    document.getElementById('dq').innerText = 'tổng tiền: ' + (sl * 150000);
+                }
+                    break;
+                case 5: {
+                    alert('giá: '+60000);
+                    let sl = +prompt('nhap so luong');
+                    document.getElementById('d').innerText = 'đơn giá: 60000 x' + sl;
+                    document.getElementById('dq').innerText = 'tổng tiền: ' + (sl * 60000);
+                }
+                    break;
+                case 6: {
+                    alert('giá: '+1230000);
+                    let sl = +prompt('nhap so luong');
+                    document.getElementById('d').innerText = 'đơn giá: 1230000 x' + sl;
+                    document.getElementById('dq').innerText = 'tổng tiền: ' + (sl * 1230000);
+                }
+                    break;
             }
-
     }
 </script>
 </body>
