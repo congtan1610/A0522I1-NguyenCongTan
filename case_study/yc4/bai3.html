@@ -8,12 +8,18 @@
 <script>
     let c1=prompt('nhập xâu thứ nhất');
     let c2=prompt('nhập xâu thứ hai');
-    let a=[],b=[];
+    let a=[],b=[],c=[],d=[];
     for (let i=0;i<c1.length;i++){
         a[i]=c1[i];
     }
     for (let i=0;i<c2.length;i++){
         b[i]=c2[i];
+    }
+    for (let i=0;i<c1.length;i++){
+        c[i]=c1[i];
+    }
+    for (let i=0;i<c2.length;i++){
+        d[i]=c2[i];
     }
     function commonCharacterCount(s1,s2) {
         let arr=[];
@@ -31,11 +37,11 @@
         return arr.length;
     }
     function printCommonCharacter(s1,s2){
-        let arr=[];
+        let arr1=[];
         for (let i = 0; i < s1.length; i++) {
             for (let j = 0; j < s2.length; j++) {
                 if(s1[i]===s2[j]){
-                    arr.push(s2[j]);
+                    arr1.push(s2[j]);
                     s2.splice(j,1);
                     s1.splice(i,1);
                     i--;j--;
@@ -45,24 +51,24 @@
         }
         let s=1;
         let newarr=[];
-        for (let i = 0; i < arr.length; i++) {
-            for (let j = i+1; j < arr.length; j++) {
-                if (arr[i] == arr[j]) {
-                    arr.splice(j, 1);
+        for (let i = 0; i < arr1.length; i++) {
+            for (let j = i+1; j < arr1.length; j++) {
+                if (arr1[i] == arr1[j]) {
+                    arr1.splice(j, 1);
                     s+=1;
                     j--;
                 }
             }
-            newarr[i]=s+" kí tự '"+arr[i]+"'";
+            newarr[i]=s+" kí tự '"+arr1[i]+"'";
             s=1;
         }
-        return  document.writeln(newarr.join(','));
+        return  newarr.join(', ');
     }
-    document.writeln(c1);
+    document.writeln('s1: '+c1);
     document.writeln('<br>');
-    document.writeln(c2);
+    document.writeln('s2: '+c2);
     document.writeln('<br>');
-    document.writeln("2 xâu s1 và s2 có "+commonCharacterCount(a,b)+" kí tự chung: "+printCommonCharacter(a,b));
+    document.writeln("2 xâu s1 và s2 có "+commonCharacterCount(a,b)+" kí tự chung: "+printCommonCharacter(c,d)+'.');
 </script>
 </body>
 </html>

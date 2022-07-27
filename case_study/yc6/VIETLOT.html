@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VIETLOT</title>
+    <style>
+        input {
+            width: 50px;
+            border-radius: 100px;
+        }
+    </style>
+</head>
+<body>
+<h1>Xổ số CodeGym</h1>
+<input type="number" max="99" min="0" id="num1"/>
+<input type="number" max="99" min="0" id="num2"/>
+<input type="number" max="99" min="0" id="num3"/>
+<input type="number" max="99" min="0" id="num4"/>
+<input type="number" max="99" min="0" id="num5"/>
+<input type="number" max="99" min="0" id="num6"/>
+<br>
+<br>
+<button onclick="Mua()" id="mua">Mua</button>
+<button onclick="Kiemtra()">Xem kết quả</button>
+<br>
+<br>
+<b id="result"></b>
+<script>
+    class Number {
+        constructor(num1, num2, num3, num4, num5, num6) {
+            this.num1 = num1;
+            this.num2 = num2;
+            this.num3 = num3;
+            this.num4 = num4;
+            this.num5 = num5;
+            this.num6 = num6;
+        }
+
+        getnum1() {
+            return this.num1;
+        }
+
+        setnum1(value) {
+            this.num1 = value;
+        }
+
+        getnum2() {
+            return this.num2;
+        }
+
+        setnum2(value) {
+            this.num2 = value;
+        }
+
+        getnum3() {
+            return this.num3;
+        }
+
+        setnum3(value) {
+            this.num3 = value;
+        }
+
+        getnum4() {
+            return this.num4;
+        }
+
+        setnum4(value) {
+            this.num4 = value;
+        }
+
+        getnum5() {
+            return this.num5;
+        }
+
+        setnum5(value) {
+            this.num5 = value;
+        }
+
+        getnum6() {
+            return this.num6;
+        }
+
+        setnum6(value) {
+            this.num6 = value;
+        }
+
+        checkFirst(number) {
+            if (number.getnum1() == Fisrt.getnum1() && number.getnum2() == Fisrt.getnum2() && number.getnum3() == Fisrt.getnum3() && number.getnum4() == Fisrt.getnum4() && number.getnum5() == Fisrt.getnum5() && number.getnum6() == Fisrt.getnum6()) {
+                return true;
+            }
+        }
+
+        checkSecond(number) {
+            if (number.getnum2() == Second.getnum2() && number.getnum3() == Second.getnum3() && number.getnum4() == Second.getnum4() && number.getnum5() == Second.getnum5() && number.getnum6() == Second.getnum6()) {
+                return true;
+            }
+        }
+
+        checkEncourage(number) {
+            if (number.getnum4() == Encourage.getnum4() && number.getnum5() == Encourage.getnum5() && number.getnum6() == Encourage.getnum6()) {
+                return true;
+            }
+        }
+    }
+
+    let Fisrt = new Number(1, 1, 1, 1, 1, 1);
+    let Second = new Number(2, 2, 2, 2, 2, 2);
+    let Encourage = new Number(3, 3, 3, 3, 3, 3);
+    let ticket = new Number();
+    let arr=[];
+    function Mua() {
+        let a = +prompt('bạn có hai lựa chọn:\n 1. Bạn tự nhập số\n 2. Hệ thống tự random');
+        if (a == 1 ) {
+            let newnum= new Number(document.getElementById('num1').value,document.getElementById('num2').value,document.getElementById('num3').value,document.getElementById('num4').value,document.getElementById('num5').value,document.getElementById('num6').value);
+            arr.push(newnum);
+            Hienthi();
+            document.getElementById('num1').value='';
+            document.getElementById('num2').value='';
+            document.getElementById('num3').value='';
+            document.getElementById('num4').value='';
+            document.getElementById('num5').value='';
+            document.getElementById('num6').value='';
+        } else if (a == 2) {
+            document.getElementById('num1').value = Math.floor(Math.random() * 100);
+            document.getElementById('num2').value = Math.floor(Math.random() * 100);
+            document.getElementById('num3').value = Math.floor(Math.random() * 100);
+            document.getElementById('num4').value = Math.floor(Math.random() * 100);
+            document.getElementById('num5').value = Math.floor(Math.random() * 100);
+            document.getElementById('num6').value = Math.floor(Math.random() * 100);
+            let newnum= new Number(document.getElementById('num1').value,document.getElementById('num2').value,document.getElementById('num3').value,document.getElementById('num4').value,document.getElementById('num5').value,document.getElementById('num6').value);
+            arr.push(newnum);
+            Hienthi();
+            document.getElementById('num1').value='';
+            document.getElementById('num2').value='';
+            document.getElementById('num3').value='';
+            document.getElementById('num4').value='';
+            document.getElementById('num5').value='';
+            document.getElementById('num6').value='';
+        }
+    }
+    function Hienthi() {
+        let str='<table border="1px">';
+        str=str+'<tr>'+
+            '<th>Vé</th>'+
+            '</tr>';
+        for (let i=0;i<arr.length;i++){
+            str=str+'<tr>'+
+                    '<th>'+arr[i].getnum1()+' '+arr[i].getnum2()+' '+arr[i].getnum3()+' '+arr[i].getnum4()+' '+arr[i].getnum5()+' '+arr[i].getnum6()+' '+'</th>'+
+                    '</tr>'
+        }
+        str=str+'</table>';
+        document.getElementById('result').innerHTML=str;
+    }
+
+    function Kiemtra() {
+        ticket.setnum1(document.getElementById('num1').value);
+        ticket.setnum2(document.getElementById('num2').value);
+        ticket.setnum3(document.getElementById('num3').value);
+        ticket.setnum4(document.getElementById('num4').value);
+        ticket.setnum5(document.getElementById('num5').value);
+        ticket.setnum6(document.getElementById('num6').value);
+        if (ticket.checkFirst(ticket)) {
+            document.getElementById('result').innerText = 'Chúc mừng bạn đã trúng giải nhất';
+        } else if (ticket.checkSecond(ticket)) {
+            document.getElementById('result').innerText = 'Chúc mừng bạn đã trúng giải nhì';
+        } else if (ticket.checkEncourage(ticket)) {
+            document.getElementById('result').innerText = 'Chúc mừng bạn đã trúng giải khuyến khích';
+        } else {
+            document.getElementById('result').innerText = 'Chúc bạn may mắn lần sau';
+        }
+    }
+</script>
+</body>
+</html>
