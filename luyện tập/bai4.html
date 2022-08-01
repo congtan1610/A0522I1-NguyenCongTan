@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai4</title>
+</head>
+<body>
+<script>
+    let a = prompt('nhập số phần tử của mảng');
+    let arr = [];
+    while(a > 50) {
+        alert('chỉ được nhập mảng có 50 phần tử trở xuống');
+        a = prompt('nhập số phần tử của mảng');
+    }
+    if (a<=50){
+        for (let i = 0; i < a; i++) {
+            arr[i] = +prompt('nhập a[' + i + ']');
+        }
+    }
+    let sum = 0;
+    let dem = 0;
+    for (let i = 1; i < arr.length; i++) {
+        if (arr[i] % 2 == 0 && i % 2 != 0) {
+            sum += arr[i];
+            dem += 1;
+        }
+    }
+    document.writeln('mảng vừa nhập là: ' + arr);
+    document.writeln('<br>');
+    if (sum == 0) {
+        document.writeln('không có phần tử nào của mảng thỏa đk');
+    } else
+        document.writeln('trung bình cộng của số chẵn tại vị trí lẻ trong mảng là: ' + (sum / dem));
+</script>
+</body>
+</html>

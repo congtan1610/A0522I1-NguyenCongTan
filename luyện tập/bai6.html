@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai6</title>
+</head>
+<body>
+<script>
+    let a = prompt('nhập số phần tử của mảng 1');
+    let arr1 = [];
+    for (let i = 0; i < a; i++) {
+        arr1[i] = prompt('nhập a[' + i + ']');
+    }
+    let b = prompt('nhập số phần tử của mảng 2');
+    let arr2 = [];
+    for (let i = 0; i < b; i++) {
+        arr2[i] = prompt('nhập b[' + i + ']');
+    }
+
+    function KiemTra(a, b) {
+        let temp = [];
+        let check = 0;
+        if (b.length > a.length) {
+            return false;
+        } else {
+            for (let i = 0; i < a.length; i++) {
+                let tg = 0;
+                if (a[i] == b[0]) {
+                    temp = a.slice(i,i+b.length);
+                    for (let m = 0; m < b.length; m++) {
+                        if (b[m] != temp[m]) {
+                            tg += 1;
+                        }
+                    }
+                    if (tg == 0) {
+                        check += 1;
+                    }
+                }
+            }
+            if (check != 0) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    }
+
+    document.writeln('mảng thứ nhất: ' + arr1);
+    document.writeln('<br>');
+    document.writeln('mảng thứ hai: ' + arr2);
+    document.writeln('<br>');
+    document.writeln('mảng thứ hai có phải là mảng con của mảng thứ nhất không: ' + KiemTra(arr1, arr2));
+</script>
+</body>
+</html>

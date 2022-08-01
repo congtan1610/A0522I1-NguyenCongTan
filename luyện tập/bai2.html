@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai2</title>
+</head>
+<body>
+<script>
+    let a=prompt('nhập số phần tử của mảng');
+    let arr=[];
+    for (let i=0;i<a;i++){
+        arr[i]=prompt('nhập a['+i+']');
+    }
+    function count() {
+        let s=1;
+        let newarr=[];
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = i+1; j < arr.length; j++) {
+                if (arr[i] == arr[j]) {
+                    arr.splice(j, 1);
+                    s+=1;
+                    j--;
+                }
+            }
+            newarr[i]=arr[i]+' : '+s+' lần';
+            s=1;
+        }
+        return  newarr.join(', ');
+    }
+    document.writeln('mảng vừa nhập: '+arr);
+    document.writeln('<br>');
+    document.writeln(count());
+</script>
+</body>
+</html>

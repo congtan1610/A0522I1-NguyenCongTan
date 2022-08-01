@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai1</title>
+</head>
+<body>
+<script>
+    let arr=[];
+    let num=prompt('nhập số');
+    // function SoNguyenTo(a) {
+    //     for (let i=2;i<=a;i++){
+    //         if(Check(i)){
+    //             arr.push(i);
+    //         }
+    //     }
+    //     return arr;
+    // }
+    // function Check(b) {                                  //cách 1
+    //     let flag=true;
+    //     for (let i=2;i<=b/2;i++){
+    //         if (b%i==0){
+    //             return false;
+    //         }
+    //     }
+    //     if (flag){
+    //         return true;
+    //     }else  return  false;
+    // }
+    function SoNguyenTo1(a) {
+        for (let i=2;i<=a;i++){
+            let s=0;
+            for (let j=2;j<=i/2;j++){
+                if (i%j==0){                                            //cách 2
+                    s+=1;
+                }
+            }
+            if (s==0){
+                arr.push(i);
+            }
+        }
+        return arr;
+    }
+    SoNguyenTo1(num);
+    if (num<2){
+        document.writeln('các số nguyên tố từ 0 đến '+num+' là: không có.');
+    }else{
+        document.writeln('các số nguyên tố từ 0 đến '+num+' là: '+arr.join(' '));
+    }
+
+</script>
+</body>
+</html>

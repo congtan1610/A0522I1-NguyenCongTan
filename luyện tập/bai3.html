@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai3</title>
+</head>
+<body>
+<script>
+    let fib = [0, 1];
+    let kq = [];
+    let num = prompt('nhập số:');
+
+    function check(a) {
+        //lưu mảng fibo từ 0 đến số nguyên vừa nhập
+        for (let i = 0; i <= a; i++) {
+            let s = (fib[i] + fib[i + 1]);
+            if (s <= a) {
+                fib.push(s);
+            }
+        }
+        //kiểm tra các phần tử trong mảng fibo có phải là số nguyên tố không, lưu các số đáp ứng cả hai điều kiện vào mảng kq
+        for (let i = 3; i < fib.length; i++) {//chỉ cần duyệt phần tử thứ ba trở đi của dãy fibo vì 0,1,1 trong dãy fibo không phải số nguyên tố
+            let s = 0;
+            for (let j = 2; j < fib[i]; j++) {
+                if (fib[i] % j == 0) {
+                    s += 1;
+                }
+            }
+            if (s == 0) {
+                kq.push(fib[i]);
+            }
+        }
+        return kq;
+    }
+    if (num<2){
+        document.writeln('không có số thỏa đk từ 0 đến '+num);
+    }else{
+        document.writeln(check(num));
+    }
+</script>
+</body>
+</html>
